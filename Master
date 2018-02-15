@@ -18,7 +18,7 @@ def find_prime(number):
 def enter_number(number):
     print ("Please enter a 5 digit or less number to check if it is prime.")
     number = int(raw_input())
-    if number != range(1,99999):
+    if number != range(1,99999):    #Check if number is positive and 5 digits or less
         print ("That is an invalid entry.")
         print ("Please enter a 5 digit or less number to check if it is prime.")
         number = int(raw_input())
@@ -29,16 +29,16 @@ def try_another(ans):
     print "Would you like to check another number?"
     answer = ""
     while answer != 'yes' or answer != 'y' or answer != 'no' or answer != 'n':
-        answer = raw_input("yes or no?").lower()
+        answer = raw_input("yes or no?").lower()    #receives input and converts to lower case
         if answer == 'yes' or answer == 'y':
-            find_prime(enter_number(num))
+            find_prime(enter_number(num))       #Calls functions to find prime once again
         elif answer == 'no' or answer == 'n':
             break
         else:
             print "please enter a valid response."
             print "Would you like to check another number?"
             print "yes or no?"
-            answer = raw_input()
+            answer = raw_input().lower()
 
 find_prime(enter_number(num))
 try_another(answer)
