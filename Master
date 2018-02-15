@@ -1,0 +1,44 @@
+num = 0
+answer = ""
+def find_prime(number):
+    count = 2
+    divisible = []
+    while count < number/2:
+        if number % count == 0:
+            divisible.append(count)
+            count += 1
+        else:
+            count += 1
+    if divisible == []:
+        print (number, "is a prime number")
+    else:
+        print ((number, "is divisible by"), divisible)
+    return number
+
+def enter_number(number):
+    print ("Please enter a 5 digit or less number to check if it is prime.")
+    number = int(raw_input())
+    if number != range(1,99999):
+        print ("That is an invalid entry.")
+        print ("Please enter a 5 digit or less number to check if it is prime.")
+        number = int(raw_input())
+    
+    return number
+
+def try_another(ans):
+    print "Would you like to check another number?"
+    answer = ""
+    while answer != 'yes' or answer != 'y' or answer != 'no' or answer != 'n':
+        answer = raw_input("yes or no?").lower()
+        if answer == 'yes' or answer == 'y':
+            find_prime(enter_number(num))
+        elif answer == 'no' or answer == 'n':
+            break
+        else:
+            print "please enter a valid response."
+            print "Would you like to check another number?"
+            print "yes or no?"
+            answer = raw_input()
+
+find_prime(enter_number(num))
+try_another(answer)
