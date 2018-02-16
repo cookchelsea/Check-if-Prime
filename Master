@@ -32,13 +32,13 @@ def try_another(ans):
         answer = raw_input("yes or no?").lower()    #receives input and converts to lower case
         if answer == 'yes' or answer == 'y':
             find_prime(enter_number(num))       #Calls functions to find prime once again
-            print "Would you like to check another number?"
+            print ("Would you like to check another number?")
         elif answer == 'no' or answer == 'n':
             break
         else:
-            print "please enter a valid response."
-            print "Would you like to check another number?"
-            print "yes or no?"
+            print ("please enter a valid response.")
+            print ("Would you like to check another number?")
+            print ("yes or no?")
             answer = raw_input().lower()
 
 find_prime(enter_number(num))
