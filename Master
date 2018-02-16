@@ -18,7 +18,7 @@ def find_prime(number):
 def enter_number(number):
     print ("Please enter a 5 digit or less number to check if it is prime.")
     number = int(raw_input())
-    if number != range(1,99999):    #Check if number is positive and 5 digits or less
+    if number < 0 or number > 100000:    #Check if number is positive and 5 digits or less
         print ("That is an invalid entry.")
         print ("Please enter a 5 digit or less number to check if it is prime.")
         number = int(raw_input())
@@ -32,6 +32,7 @@ def try_another(ans):
         answer = raw_input("yes or no?").lower()    #receives input and converts to lower case
         if answer == 'yes' or answer == 'y':
             find_prime(enter_number(num))       #Calls functions to find prime once again
+            print "Would you like to check another number?"
         elif answer == 'no' or answer == 'n':
             break
         else:
